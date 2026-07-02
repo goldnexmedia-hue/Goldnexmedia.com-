@@ -1,0 +1,49 @@
+import Link from "next/link";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-line mt-32">
+      <div className="container-page py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="md:col-span-2">
+          <p className="font-display text-lg text-cream mb-3">
+            GoldNex<span className="text-gold">Midea</span>
+          </p>
+          <p className="text-sm text-slate max-w-sm leading-relaxed">
+            A marketing agency built around one idea: strategy, content, media,
+            and data only work when they converge. We connect the four so your
+            brand moves as one signal, not four campaigns.
+          </p>
+        </div>
+
+        <div>
+          <p className="eyebrow mb-4">Navigate</p>
+          <ul className="space-y-2 text-sm text-slate">
+            <li><Link href="/services" className="hover:text-cream">Services</Link></li>
+            <li><Link href="/portfolio" className="hover:text-cream">Work</Link></li>
+            <li><Link href="/about" className="hover:text-cream">About</Link></li>
+            <li><Link href="/blog" className="hover:text-cream">Journal</Link></li>
+            <li><Link href="/contact" className="hover:text-cream">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="eyebrow mb-4">Connect</p>
+          <div className="flex gap-4 text-slate">
+            <a href="#" aria-label="Instagram" className="hover:text-gold"><Instagram size={18} /></a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-gold"><Linkedin size={18} /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-gold"><Twitter size={18} /></a>
+          </div>
+          <p className="text-sm text-slate mt-6">hello@goldnexmidea.com</p>
+        </div>
+      </div>
+
+      <div className="hairline">
+        <div className="container-page py-6 text-xs text-slate flex flex-col md:flex-row justify-between gap-2">
+          <p>&copy; {new Date().getFullYear()} GoldNexMidea. All rights reserved.</p>
+          <p>Built on conviction, not templates.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}

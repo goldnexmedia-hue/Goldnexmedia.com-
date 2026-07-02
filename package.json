@@ -1,0 +1,35 @@
+import { ArrowUpRight } from "lucide-react";
+import { projects } from "../../../data/projects";
+
+export const metadata = {
+  title: "Work — GoldNexMidea",
+  description: "Case studies from GoldNexMidea client engagements.",
+};
+
+export default function Portfolio() {
+  return (
+    <div className="container-page py-20">
+      <p className="eyebrow mb-4">Selected work</p>
+      <h1 className="font-display text-4xl md:text-5xl text-cream max-w-2xl">
+        Results we'd put our name on.
+      </h1>
+
+      <div className="mt-16 grid md:grid-cols-2 gap-px bg-line">
+        {projects.map((p) => (
+          <article key={p.slug} className="bg-ink p-9 group">
+            <p className="eyebrow mb-3">{p.category}</p>
+            <h2 className="font-display text-2xl text-cream flex items-center gap-2">
+              {p.client}
+              <ArrowUpRight
+                size={18}
+                className="text-gold opacity-0 group-hover:opacity-100 transition-opacity"
+              />
+            </h2>
+            <p className="text-slate text-sm mt-4 leading-relaxed">{p.summary}</p>
+            <p className="text-gold text-sm font-medium mt-6">{p.result}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
